@@ -1,0 +1,40 @@
+<html lang="fr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <center>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h1>Générateur d'hommages</h1>
+        <br></br>
+        <button onclick="placeExcuse()" type="button" class="btn btn-primary btn-lg">Clic pour avoir un autre hommage(de merde)</button>
+        <br></br>
+        <h2 id="hom"></h2>
+      </div>
+      <div class="fixed-bottom">by <a href="https://twitter.com/nakou">@nakou</a>, idea from <a href="https://twitter.com/_batou_">@_batou_</a></div>
+      <script>
+      var peoples = ["Le Sénat", "Les lyonnais", "Michel Drucker", "Des lycéens","Des étudiants", "Des banquiers", "Des villageois", "Des syndicalistes", "Des malades", "Des idiots", "Des parisiens", "Des Lorains"];
+      var actions = ["en dansant la jigue","en décapitant des poupées voodoo", "en faisant un stand de crèpes", "en envahissant la Pologne", "en jouant a la marelle","en jouant du violon avec ses pieds", "en sautant dans la tamise déguisés en Mickey", "en tricotant des noeuds papillon" ];
+
+      function generateExcuseALaConPourSortir(){
+          return peoples[getRandomInt(0,peoples.length)] + " rendent hommage au personnel soignant " + actions[getRandomInt(0,actions.length)];
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max-1);
+        return Math.floor(Math.random() * (max - min +1)) + min;
+      }
+
+      function placeExcuse(){
+        var element = document.getElementById('hom');
+        element.innerHTML = generateExcuseALaConPourSortir();
+      }
+      placeExcuse();
+      </script>
+  </body>
+</html>
